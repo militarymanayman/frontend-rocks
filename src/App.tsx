@@ -4,12 +4,12 @@ import viteLogo from "/vite.svg";
 
 export const App = () => {
   const [count, setCount] = useState(0);
-
+const [title,setTitle]=useState("New");
   return (
     <div className="h-dvh flex flex-col items-center justify-center">
       <div className="bg-white p-8 rounded-md shadow-lg">
         <h1 className="text-center font-bold text-3xl text-blue-400 mb-4">
-          Frontend Rocks
+          {title}
         </h1>
 
         <div className="flex justify-center space-x-4 mb-2">
@@ -19,8 +19,7 @@ export const App = () => {
           <a href="https://react.dev" target="_blank">
             <img src={reactLogo} alt="React logo" />
           </a>
-        </div>
-
+        </div> 
         <h2 className="text-center font-bold text-xl mb-6">Vite + React</h2>
 
         <div className="flex flex-col items-center space-y-4">
@@ -29,6 +28,12 @@ export const App = () => {
             onClick={() => setCount((count) => count + 1)}
           >
             Hai premuto il pulsante {count} {count === 1 ? "volta" : "volte"}
+          </button>
+          <button 
+          className="bg-blue-500 text white px-4 rounded-md cursor-pointer"
+          onClick={()=> setTitle("NCR")}
+          >
+            Cambia Titolo 
           </button>
           <p className="text-center">
             Modifica <code>src/App.tsx</code> e salva per testare l'hot reload
